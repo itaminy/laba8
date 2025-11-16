@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма обратной связи | Контакты</title>
+    <meta name="description" content="Свяжитесь с нами через форму обратной связи">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="header">
+    <div class="container">
+        <h1>Свяжитесь с нами</h1>
+        <p class="subtitle">Мы всегда рады вашим отзывам и предложениям</p>
+        <button class="open-btn" id="openBtn">Оставить отзыв</button>
+    </div>
+</header>
+
+<main class="main">
+    <section class="info-section">
+        <div class="container">
+            <h2>Наша команда</h2>
+            <p>Мы готовы ответить на все ваши вопросы и рассмотреть предложения.</p>
+        </div>
+    </section>
+</main>
+
+<div class="modal-overlay" id="modalOverlay">
+    <div class="modal-container">
+        <form class="feedback-form" id="feedbackForm" novalidate>
+            <button type="button" class="close-btn" id="closeBtn" aria-label="Закрыть форму">&times;</button>
+            <h2>Форма обратной связи</h2>
+
+            <div class="form-group">
+                <label for="fullName">ФИО *</label>
+                <input type="text" id="fullName" name="fullName" required aria-required="true">
+                <span class="error-text" id="fullNameError" aria-live="polite"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" required aria-required="true">
+                <span class="error-text" id="emailError" aria-live="polite"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Телефон</label>
+                <input type="tel" id="phone" name="phone" aria-describedby="phoneHelp">
+                <small id="phoneHelp" class="help-text">Необязательное поле</small>
+                <span class="error-text" id="phoneError" aria-live="polite"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="organization">Организация</label>
+                <input type="text" id="organization" name="organization" aria-describedby="orgHelp">
+                <small id="orgHelp" class="help-text">Необязательное поле</small>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Сообщение *</label>
+                <textarea id="message" name="message" required aria-required="true"></textarea>
+                <span class="error-text" id="messageError" aria-live="polite"></span>
+            </div>
+
+            <div class="checkbox-group">
+                <input type="checkbox" id="agree" name="agree" required aria-required="true">
+                <label for="agree">Я согласен с <a href="#privacy-policy" class="policy-link">политикой обработки персональных данных</a> *</label>
+                <span class="error-text" id="agreeError" aria-live="polite"></span>
+            </div>
+
+            <button type="submit" class="submit-btn" id="submitBtn">
+                <span class="btn-text">Отправить</span>
+                <span class="btn-loading">Отправка...</span>
+            </button>
+
+            <div class="message success" id="successMessage" role="alert" aria-live="assertive">
+                <span class="message-icon" aria-hidden="true">✓</span>
+                <span>Сообщение успешно отправлено!</span>
+            </div>
+
+            <div class="message error" id="errorMessage" role="alert" aria-live="assertive">
+                <span class="message-icon" aria-hidden="true">⚠</span>
+                <span>Произошла ошибка при отправке сообщения. Пожалуйста, попробуйте еще раз.</span>
+            </div>
+        </form>
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <p>&copy; 2025 Все права защищены</p>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
